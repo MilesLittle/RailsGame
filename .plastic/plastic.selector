@@ -1,0 +1,4 @@
+repository "Rails_@CitrusGalaxy@cloud"
+  path "/"
+    br "/main"
+    co "/main"

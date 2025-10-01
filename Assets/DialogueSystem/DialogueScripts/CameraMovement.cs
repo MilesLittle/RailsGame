@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-   public GameObject Focus;
-
+  
    
 
-  public new Camera camera;
+  
 
   
   public Movement movementScript;
@@ -22,35 +21,36 @@ public class CameraMovement : MonoBehaviour
 
 
 
-// Method that places the camera at a given position. EX: the camera being at the character's feet, then immediately shifting to the character's head
+// Method that places the cam at a given position. EX: the cam being at the character's feet, then immediately shifting to the character's head
 
 
 
 
-void frontFace(float radius) {
+public void frontFace(Camera cam, GameObject Focus, float radius) {
 i = 2;
-  camera.transform.position = movementScript.cylToCar(new cylCoords(radius, Mathf.PI/2, 0f), Focus.transform.position);
-  camera.transform.LookAt(Focus.transform.position);
+  cam.transform.position = movementScript.cylToCar(new cylCoords(radius, Mathf.PI/2 , 0f), Focus.transform);
+  cam.transform.LookAt(Focus.transform.position);
+        Debug.Log("moving to position");
 
-}
+    }
 
-void behindFace(float radius) {
+public void behindFace(Camera cam, GameObject Focus, float radius) {
    i = 2;
-    camera.transform.position = movementScript.cylToCar(new cylCoords(radius, (3/2)*Mathf.PI , 0f), Focus.transform.position);
-  camera.transform.LookAt(Focus.transform.position);
+    cam.transform.position = movementScript.cylToCar(new cylCoords(radius, (3/2)*Mathf.PI , 0f), Focus.transform);
+  cam.transform.LookAt(Focus.transform.position);
 
 }
 
-void snapCamera(cylCoords pos, Vector3 focus) {
+public void snapCamera(Camera cam, cylCoords pos, Vector3 focus) {
   i = 2;
-camera.transform.position = movementScript.cylToCar(pos, focus);
-camera.transform.LookAt(focus);
+//cam.transform.position = movementScript.cylToCar(pos, focus);
+//cam.transform.LookAt(focus);
 }
 
 
-IEnumerator moveCamera(cylCoords currentPos, cylCoords endPos, Vector3 focus, float spinSpeed, float heightSpeed, float radiusSpeed) {
+/*public IEnumerator moveCamera(Camera cam, cylCoords currentPos, cylCoords endPos, Vector3 focus, float spinSpeed, float heightSpeed, float radiusSpeed) {
 i = 1;
-camera.transform.position = movementScript.cylToCar(currentPos, focus);
+cam.transform.position = movementScript.cylToCar(currentPos, f);
 
 
 int j = i;
@@ -59,20 +59,20 @@ if (Vector3.Distance(movementScript.cylToCar(currentPos,focus), movementScript.c
   currentPos.radius = Mathf.Lerp(currentPos.radius, endPos.radius, radiusSpeed);
   currentPos.theta = Mathf.Lerp(currentPos.theta, endPos.theta, spinSpeed);
   currentPos.height = Mathf.Lerp(currentPos.height, endPos.height, heightSpeed);
-  camera.transform.position = movementScript.cylToCar(currentPos, focus);
-  camera.transform.LookAt(new Vector3(focus.x, camera.transform.position.y, focus.z));
+  cam.transform.position = movementScript.cylToCar(currentPos, focus);
+  cam.transform.LookAt(new Vector3(focus.x, cam.transform.position.y, focus.z));
   
   yield return null;
 }
-camera.transform.position = movementScript.cylToCar(endPos, focus);
-camera.transform.LookAt(focus);
+cam.transform.position = movementScript.cylToCar(endPos, focus);
+cam.transform.LookAt(focus);
 }
 }
 
-IEnumerator moveCameraLoop(cylCoords currentPos, Vector3 focus, float spinSpeed, float heightSpeed, float radiusSpeed, float radiusRange, float heightRange) {
+IEnumerator moveCameraLoop(Camera cam, cylCoords currentPos, Vector3 focus, float spinSpeed, float heightSpeed, float radiusSpeed, float radiusRange, float heightRange) {
 i = 0;
 
-camera.transform.position = movementScript.cylToCar(currentPos, focus);
+cam.transform.position = movementScript.cylToCar(currentPos, focus);
 cylCoords endPos = new cylCoords(currentPos.radius + radiusRange, currentPos.theta + (2 * Mathf.PI), currentPos.height + heightRange);
 
 int j = i;
@@ -110,13 +110,13 @@ while (i == j) {
   currentPos.height += heightInterval;
   currentPos.theta +=  Mathf.PI/500;
 
-  camera.transform.position = movementScript.cylToCar(currentPos, focus);
-  camera.transform.LookAt(new Vector3(focus.x, camera.transform.position.y, focus.z));
+  cam.transform.position = movementScript.cylToCar(currentPos, focus);
+  cam.transform.LookAt(new Vector3(focus.x, cam.transform.position.y, focus.z));
   
   yield return null;
   
 
-} }
+} } */
 
 
 
@@ -127,10 +127,10 @@ while (i == j) {
 
 }
 
-// Method that checks the direction of the focus. EX: Being able to tell the direction the character is facing in order to use that for camera placement
+// Method that checks the direction of the focus. EX: Being able to tell the direction the character is facing in order to use that for cam placement
 
    
-// Methods that move the camera in some way. EX: The camera starting off behind the character then rotating to in front of the character. 
+// Methods that move the cam in some way. EX: The cam starting off behind the character then rotating to in front of the character. 
   
 
  // public void HorizontalArc(GameObject focus = null, float Speed = 10, float arcDistance = 360, sCoords? startingLocation = null) {

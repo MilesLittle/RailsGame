@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272d1a472b6af694a89961bbf57c233d, type: 3}
+  m_Name: Lumia
+  m_EditorClassIdentifier: 
+  Strength: 2
+  Intelligence: 2
+  Constitution: 2
+  Dexterity: 4
+  Luck: 3
+  Agility: 4
+  Fortitude: 2
+  strengthGrowthRate: 0.5
+  intelligenceGrowthRate: 0.5
+  constitutionGrowthRate: 0.5
+  dexterityGrowthRate: 0.5
+  luckGrowthRate: 0.5
+  agilityGrowthRate: 0.5
+  fortitudeGrowthRate: 0.5
+  maxAP: 5
+  availableSkills:
+  - {fileID: 11400000, guid: 601b6f983698d2c4aaae481913f8fe9f, type: 2}
+  - {fileID: 11400000, guid: 61b3585a0a3417944bb52b5cf9f49630, type: 2}
+  - {fileID: 11400000, guid: 0fb94e5e3333e1e4a8d87600cb630072, type: 2}
+  - {fileID: 11400000, guid: b529cfd80929b2f4398af68d9b40c3c7, type: 2}

@@ -1,4 +1,4 @@
-repository "Rails_@CitrusGalaxy@cloud"
+repository "Rails_1@CitrusGalaxy@cloud"
   path "/"
     br "/main"
     co "/main"

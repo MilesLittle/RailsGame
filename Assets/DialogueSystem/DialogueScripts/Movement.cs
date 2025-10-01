@@ -43,12 +43,14 @@ public class Movement : MonoBehaviour
 
    }
 
-   public Vector3 cylToCar(cylCoords coords, Vector3 focus) {
-    float x = (coords.radius * Mathf.Cos(coords.theta)) + focus.x;
-    float z = (coords.radius * Mathf.Sin(coords.theta)) + focus.z;
-    float y = coords.height + focus.y;
+   public Vector3 cylToCar(cylCoords coords, Transform focus) {
+        float x = (coords.radius * Mathf.Cos(coords.theta));
+    float z = (coords.radius * Mathf.Sin(coords.theta));
+        float y = coords.height;
+        Vector3 localOffset = new Vector3(x, y, z);
 
-    return (new Vector3(x,y,z));
+        Vector3 rotatedOffSet = focus.rotation * localOffset;
+        return focus.position + rotatedOffSet;
    }
 
    

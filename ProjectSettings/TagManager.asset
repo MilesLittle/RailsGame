@@ -10,6 +10,13 @@ TagManager:
   - Actor
   - Object
   - BigObject
+  - SceneCamera
+  - UnitCircle
+  - IntCircle
+  - RTSManager
+  - PlayerCamera
+  - TacticsCamera
+  - UnitHead
   layers:
   - Default
   - TransparentFX
@@ -24,7 +31,7 @@ TagManager:
   - Cursor
   - Unit
   - BigObject
-  - 
+  - UnitCircle
   - 
   - 
   - 

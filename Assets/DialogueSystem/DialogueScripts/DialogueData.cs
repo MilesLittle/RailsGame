@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
-[CreateAssetMenu(fileName = "New Dialogue Data", menuName = "Dialogue System/Dialogue Data")]
+[CreateAssetMenu(fileName = "New Dialogue Data", menuName = "Resources/DialogueData")]
 public class DialogueData : ScriptableObject
 {
    [System.Serializable]
@@ -33,9 +33,47 @@ public string[] expression; // may or may not be coupled into the animation clas
 //all animation based things can either be specifically defined, default, or not defined. If not defined, the object will simply keep the same settings as the previous setting.
 //If defined, the animations will execute based on the order numbers defined in the animation class. For example, all animations with order #1 will execute simultaneously, then everything with 2 and so on.
 // If default, the object will revert to its default position. Every object will have a resting/default animation.
+   
+ 
    }
+   
 
+       private void OnEnable()
+    {
+        if (entries == null || entries.Length == 0)
+        {
+            // Initialize the entries array with one default entry
+            entries = new DialogueEntry[1];
+            entries[0] = new DialogueEntry();
+        }
 
+        foreach (var entry in entries)
+        {
+            if (entry.sceneCamera == null)
+            {
+                entry.sceneCamera = FindDefaultSceneCamera();
+            }
+            if (entry.portraitCamera == null)
+            {
+                entry.portraitCamera = FindDefaultPortraitCamera();
+            }
+        }
+    }
+
+     private Camera FindDefaultSceneCamera()
+    {
+        // Find the default scene camera by tag or name
+        // Example: return Camera.main;
+        return GameObject.FindWithTag("MainCamera")?.GetComponent<Camera>();
+    }
+
+    private Camera FindDefaultPortraitCamera()
+    {
+        // Find the default portrait camera by tag or name
+        // Example: return GameObject.Find("PortraitCamera")?.GetComponent<Camera>();
+        return GameObject.FindWithTag("PortraitCamera")?.GetComponent<Camera>();
+    }
+   
 public string key;
    public DialogueEntry[] entries;
 }

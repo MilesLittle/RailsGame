@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: Chilling Blade
   m_EditorClassIdentifier: 
   skillName: Chilling Blade
-  apCost: 3
   icon: {fileID: 0}
   description: 
-  effectShape: 1
-  range: 2
-  size: 3
-  baseDamage: 3
-  combos: []
+  spCost: 1
+  basePower: 10
+  powerMultiplier: 1
+  shapeType: 3
+  range: 0
+  shapeLength: 1
+  shapeOffSet: 1
+  isSupportSkill: 0
+  canTargetSelf: 0
+  originatesFromUser: 1

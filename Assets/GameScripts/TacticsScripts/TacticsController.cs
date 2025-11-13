@@ -24,6 +24,13 @@ public enum TacticsCameraState
     FollowingMovement,
     
 }
+
+public enum TileSelectionMode
+{
+    None,
+    Movement,
+    SkillTargeting
+}
 public class TacticsController : MonoBehaviour
 {
 
@@ -33,69 +40,43 @@ public class TacticsController : MonoBehaviour
     private int selectedAction = 0;
     private string[] actionOptions = { "Move", "Skill", "Item", "End Turn" };
     public Queue<Unit> turnQueue = new Queue<Unit>();
-    [SerializeField]
-    public ActionChain actionChain;
-    [SerializeField]
-    public ComboResolver comboResolver;
+
+    public TileSelectionMode tileSelectionMode = TileSelectionMode.None;
+    private Skill skillBeingUsed;
 
     private void Awake()
     {
-        if (comboResolver == null)
-        {
-            comboResolver = new ComboResolver();
-
-        }
+       
     }
     void OnGUI()
     {
-       if(gameController.gameState == GamePlayState.Tactics)
+        if (gameController.gameState == GamePlayState.Tactics)
         {
-            if(tacticsState == TacticsState.PlayerActionSelect)
+            // ---------------- PLAYER ACTION SELECT ----------------
+            if (tacticsState == TacticsState.PlayerActionSelect)
             {
                 GUI.Label(new Rect(10, 10, 200, 20), "Choose Action:");
+
                 for (int i = 0; i < actionOptions.Length; i++)
                 {
                     GUI.color = (i == selectedAction) ? Color.yellow : Color.white;
-                    if (GUI.Button(new Rect(10,40 + i * 30, 100, 25), actionOptions[i]))
+                    if (GUI.Button(new Rect(10, 40 + i * 30, 100, 25), actionOptions[i]))
                     {
                         HandleActionSelect(actionOptions[i]);
                     }
                 }
+
                 GUI.color = Color.white;
             }
 
-            if(tacticsState == TacticsState.PlayerSkillQueueing)
-            {
-                Unit unit = gameController.currentUnit;
-                for(int i = 0; i < unit.unitStats.availableSkills.Count; i++)
-                {
-                    Skill skill = unit.unitStats.availableSkills[i];
-                    if(GUI.Button(new Rect(10,250 + i * 40, 150, 30),
-                            $"{skill.skillName} ({skill.apCost} AP)") && skill.apCost <= unit.currentAP)
-                    {
-                        unit.skillQueue.Enqueue(skill);
-                        Debug.Log(unit.skillQueue.Count);
-                        unit.currentAP -= skill.apCost;
-                    }
-                }
-                if(GUI.Button(new Rect(200, 440, 150, 30), "Execute Skills"))
-                {
-                    ExecuteSkillQueue(unit);
-                    tacticsState = TacticsState.ShiftingTurn;
-                    shiftTurnState();
-                }
-            }
-           
-           
+            
+            
 
-            var queueArray = turnQueue.ToArray();
-            GUI.color = Color.black;
-            for (int i = 0; i < queueArray.Length; i++)
-            {
-                GUI.Label(new Rect(400, 10 + i * 20, 200, 20), $"{i + 1}: {queueArray[i].unitName}");
+                GUI.enabled = true;
             }
         }
-    }
+    
+
 
     private void HandleActionSelect(string action)
     {
@@ -113,7 +94,7 @@ public class TacticsController : MonoBehaviour
             case "Skill":
               
                 tacticsState = TacticsState.PlayerSkillQueueing;
-                gameController.currentUnit.ResetAp();
+                gameController.currentUnit.ResetSP();
                 break;
 
             case "Item":
@@ -573,32 +554,9 @@ public class TacticsController : MonoBehaviour
         return targetTile;
     }
 
-    private void ExecuteSkillQueue(Unit unit)
-    {
-        if(unit.skillQueue == null || unit.skillQueue.Count == 0)
-        {
-            return;
-        }
+    
+    
 
-        Queue<Skill> resolvedQueue = comboResolver.ResolveCombos(unit.skillQueue);
-
-        foreach (Skill skill in resolvedQueue)
-        {
-            Debug.Log($"Executing Skill: {skill.skillName}");
-            ApplySkillEffect(unit, skill);
-
-        }
-
-        unit.skillQueue.Clear();
-        unit.currentAP = 0;
-
-
-    }
-
-    private void ApplySkillEffect(Unit caster, Skill skill)
-    {
-
-       //implement this later on
-    }
+    
     
 }

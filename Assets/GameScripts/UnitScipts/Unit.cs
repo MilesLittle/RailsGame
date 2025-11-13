@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
 using UnityEngine;
 public enum UnitMovementType
@@ -17,6 +18,8 @@ public enum UnitFaction
     Space_Pirates,
     SPC,
 }
+
+
 
 
 public class Unit : MonoBehaviour
@@ -52,14 +55,37 @@ public class Unit : MonoBehaviour
     public int MAtk;
     public int MaxHp;
     public int Hp;
-    public int currentAP;
-    public Queue<Skill> skillQueue;
+    public int currentSP;
+    public int maxSP;
 
-    public void ResetAp()
+    public List<Skill> AvailableSkills => unitStats.availableSkills;
+
+    public bool CanUseSkill(Skill skill)
     {
-        currentAP = unitStats.maxAP;
-        skillQueue = new Queue<Skill>();
+        return currentSP >= skill.spCost;
+
     }
+   
+    public void UseSP(int amount)
+    {
+        currentSP = Mathf.Max(0, currentSP - amount);
+
+    }
+
+    public void RestoreSP(int amount)
+    {
+        currentSP = Mathf.Min(maxSP, currentSP + amount);
+    }
+
+  
+
+    public void ResetSP()
+    {
+        currentSP = maxSP;
+    }
+   
+    
+   
 
     public GameObject FindWithTagInChildrenOrSelf(GameObject root, string tag)
     {

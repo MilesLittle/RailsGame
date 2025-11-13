@@ -64,12 +64,11 @@
     <Compile Include="Assets\GameScripts\UnitScipts\UnitInfo\Beastiary.cs" />
     <Compile Include="Assets\GameScripts\GridScripts\GridController.cs" />
     <Compile Include="Assets\DialogueSystem\DialogueScripts\DialogueManager.cs" />
-    <Compile Include="Assets\GameScripts\TacticsScripts\ActionChain.cs" />
     <Compile Include="Assets\DialogueSystem\DialogueCamera\PortraitCamera.cs" />
+    <Compile Include="Assets\GameScripts\Skills\SkillExecutor.cs" />
     <Compile Include="Assets\DialogueSystem\DialogueScripts\CameraMovement.cs" />
     <Compile Include="Assets\GameScripts\UnitScipts\SeaMouse.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
-    <Compile Include="Assets\GameScripts\TacticsScripts\ComboResolver.cs" />
     <Compile Include="Assets\GameScripts\GridScripts\GridVisualizor.cs" />
     <Compile Include="Assets\GameScripts\DungeonScripts\DungeonController.cs" />
     <Compile Include="Assets\GameScripts\GameController.cs" />
@@ -81,7 +80,9 @@
     <Compile Include="Assets\DialogueSystem\DialogueScripts\Conversation.cs" />
     <Compile Include="Assets\GeneralGameScripts\FrameRateCap.cs" />
     <Compile Include="Assets\GameScripts\GridScripts\Tile.cs" />
+    <Compile Include="Assets\GameScripts\Skills\TileSelector.cs" />
     <Compile Include="Assets\GameScripts\UnitScipts\Unit.cs" />
+    <Compile Include="Assets\GameScripts\Skills\SkillTargetingSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

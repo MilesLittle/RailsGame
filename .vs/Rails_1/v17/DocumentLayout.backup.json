@@ -3,32 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\detec\\Rails_1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|c:\\users\\detec\\rails_1\\assets\\gamescripts\\tacticsscripts\\actionchain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\tacticsscripts\\actionchain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\tacticsscripts\\tacticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\tacticsscripts\\tacticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\unitscipts\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|c:\\users\\detec\\rails_1\\assets\\gamescripts\\unitscipts\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\unitscipts\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|c:\\users\\detec\\rails_1\\assets\\gamescripts\\unitscipts\\unitinfo\\unitinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\unitscipts\\unitinfo\\unitinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\skills\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\skills\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\unitscipts\\unitinfo\\unitinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\unitscipts\\unitinfo\\unitinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\unitscipts\\seamouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\unitscipts\\seamouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\tacticsscripts\\skillparadigm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\tacticsscripts\\skillparadigm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\tacticsscripts\\triggercondition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\tacticsscripts\\triggercondition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\gridscripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\gridscripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\gridscripts\\gridcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\gridscripts\\gridcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\tacticsscripts\\tacticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\tacticsscripts\\tacticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\tacticsscripts\\actionchain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\tacticsscripts\\actionchain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\tacticsscripts\\comboresolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\tacticsscripts\\comboresolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\dialoguesystem\\dialoguescripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,16 +75,8 @@
       "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\unitscipts\\unitinfo\\beastiary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\unitscipts\\seamouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\unitscipts\\seamouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\gridscripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCF8211C-3EC3-B76A-2215-A77BC1E379FD}|Assembly-CSharp.csproj|solutionrelative:assets\\gamescripts\\gridscripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\detec\\Rails_1\\assets\\gamescripts\\skills\\skills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\gamescripts\\skills\\skills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\detec\\rails_1\\assets\\gamescripts\\skills\\skillslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\gamescripts\\skills\\skillslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,33 +94,79 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 18,
+              "Title": "SkillSlot.cs",
+              "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\Skills\\SkillSlot.cs",
+              "RelativeDocumentMoniker": "Assets\\GameScripts\\Skills\\SkillSlot.cs",
+              "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\Skills\\SkillSlot.cs",
+              "RelativeToolTip": "Assets\\GameScripts\\Skills\\SkillSlot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T16:06:04.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SkillParadigm.cs",
+              "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\TacticsScripts\\SkillParadigm.cs",
+              "RelativeDocumentMoniker": "Assets\\GameScripts\\TacticsScripts\\SkillParadigm.cs",
+              "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\TacticsScripts\\SkillParadigm.cs",
+              "RelativeToolTip": "Assets\\GameScripts\\TacticsScripts\\SkillParadigm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T15:58:22.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TriggerCondition.cs",
+              "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\TacticsScripts\\TriggerCondition.cs",
+              "RelativeDocumentMoniker": "Assets\\GameScripts\\TacticsScripts\\TriggerCondition.cs",
+              "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\TacticsScripts\\TriggerCondition.cs",
+              "RelativeToolTip": "Assets\\GameScripts\\TacticsScripts\\TriggerCondition.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T15:54:32.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ComboResolver.cs",
+              "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\TacticsScripts\\ComboResolver.cs",
+              "RelativeDocumentMoniker": "Assets\\GameScripts\\TacticsScripts\\ComboResolver.cs",
+              "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\TacticsScripts\\ComboResolver.cs",
+              "RelativeToolTip": "Assets\\GameScripts\\TacticsScripts\\ComboResolver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T17:31:33.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "ActionChain.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\TacticsScripts\\ActionChain.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\TacticsScripts\\ActionChain.cs",
               "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\TacticsScripts\\ActionChain.cs",
               "RelativeToolTip": "Assets\\GameScripts\\TacticsScripts\\ActionChain.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAQwC4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAUwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T16:38:25.93Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T16:38:25.93Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Skill.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\Skills\\Skill.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\Skills\\Skill.cs",
               "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\Skills\\Skill.cs",
               "RelativeToolTip": "Assets\\GameScripts\\Skills\\Skill.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T16:34:49.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T16:34:49.898Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "Movement.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\DialogueSystem\\DialogueScripts\\Movement.cs",
               "RelativeDocumentMoniker": "Assets\\DialogueSystem\\DialogueScripts\\Movement.cs",
@@ -120,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "CameraMovement.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\DialogueSystem\\DialogueScripts\\CameraMovement.cs",
               "RelativeDocumentMoniker": "Assets\\DialogueSystem\\DialogueScripts\\CameraMovement.cs",
@@ -132,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "DialogueManager.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\DialogueSystem\\DialogueScripts\\DialogueManager.cs",
               "RelativeDocumentMoniker": "Assets\\DialogueSystem\\DialogueScripts\\DialogueManager.cs",
@@ -144,20 +202,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "UnitInfo.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\UnitScipts\\UnitInfo\\UnitInfo.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\UnitScipts\\UnitInfo\\UnitInfo.cs",
               "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\UnitScipts\\UnitInfo\\UnitInfo.cs",
               "RelativeToolTip": "Assets\\GameScripts\\UnitScipts\\UnitInfo\\UnitInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T01:22:44.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T01:22:44.182Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "Beastiary.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\UnitScipts\\UnitInfo\\Beastiary.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\UnitScipts\\UnitInfo\\Beastiary.cs",
@@ -169,20 +226,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Unit.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\UnitScipts\\Unit.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\UnitScipts\\Unit.cs",
               "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\UnitScipts\\Unit.cs",
               "RelativeToolTip": "Assets\\GameScripts\\UnitScipts\\Unit.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAAB0AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAtwFEAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T16:16:44.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 3,
               "Title": "SeaMouse.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\UnitScipts\\SeaMouse.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\UnitScipts\\SeaMouse.cs",
@@ -194,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "GridVisualizor.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\GridScripts\\GridVisualizor.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\GridScripts\\GridVisualizor.cs",
@@ -206,31 +263,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 7,
               "Title": "Tile.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\GridScripts\\Tile.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\GridScripts\\Tile.cs",
               "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\GridScripts\\Tile.cs",
               "RelativeToolTip": "Assets\\GameScripts\\GridScripts\\Tile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T17:51:35.04Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "GameController.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\GameController.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\GameController.cs",
               "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\GameController.cs",
               "RelativeToolTip": "Assets\\GameScripts\\GameController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwA8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAQwNAAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T15:15:51.965Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "DungeonController.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\DungeonScripts\\DungeonController.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\DungeonScripts\\DungeonController.cs",
@@ -242,38 +299,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Skills.cs",
-              "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\Skills\\Skills.cs",
-              "RelativeDocumentMoniker": "Assets\\GameScripts\\Skills\\Skills.cs",
-              "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\Skills\\Skills.cs",
-              "RelativeToolTip": "Assets\\GameScripts\\Skills\\Skills.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T16:17:39.827Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "TacticsController.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\TacticsScripts\\TacticsController.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\TacticsScripts\\TacticsController.cs",
               "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\TacticsScripts\\TacticsController.cs",
               "RelativeToolTip": "Assets\\GameScripts\\TacticsScripts\\TacticsController.cs",
-              "ViewState": "AgIAACICAAAAAAAAAAAAADsCAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEMCAAAAAAAAAAAswGgCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T15:15:32.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-24T15:15:32.194Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "GridController.cs",
               "DocumentMoniker": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\GridScripts\\GridController.cs",
               "RelativeDocumentMoniker": "Assets\\GameScripts\\GridScripts\\GridController.cs",
               "ToolTip": "C:\\Users\\detec\\Rails_1\\Assets\\GameScripts\\GridScripts\\GridController.cs",
               "RelativeToolTip": "Assets\\GameScripts\\GridScripts\\GridController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAqwFkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T15:13:18.73Z"
             }

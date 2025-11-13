@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: Pierce
   m_EditorClassIdentifier: 
   skillName: Pierce
-  apCost: 2
   icon: {fileID: 0}
   description: Pierce the enemy
-  effectShape: 0
+  spCost: 1
+  basePower: 10
+  powerMultiplier: 1
+  shapeType: 2
   range: 1
-  size: 1
-  baseDamage: 0
-  combos:
-  - pattern:
-    - Pierce
-    - Bash
-    - Slash
-    result: {fileID: 11400000, guid: fd96c7280b7395446859b19baee66d1f, type: 2}
+  shapeLength: 3
+  shapeOffSet: 1
+  isSupportSkill: 0
+  canTargetSelf: 0
+  originatesFromUser: 1

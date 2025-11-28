@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using JetBrains.Annotations;
 using UnityEngine;
 public enum UnitMovementType
@@ -19,7 +20,13 @@ public enum UnitFaction
     SPC,
 }
 
-
+public enum DirectionFacing
+{
+    North,
+    South,
+    East,
+    West,
+};
 
 
 public class Unit : MonoBehaviour
@@ -31,13 +38,7 @@ public class Unit : MonoBehaviour
     public Tile currentTile;
     public int unitLevel;
     public bool hasAttacked;
-    public enum DirectionFacing
-    {
-        North,
-        South,
-        East,
-        West,
-    };
+
     public int turnInitiative;
     public int turnCharge;
     public DirectionFacing directionFacing;
@@ -55,34 +56,15 @@ public class Unit : MonoBehaviour
     public int MAtk;
     public int MaxHp;
     public int Hp;
-    public int currentSP;
-    public int maxSP;
-
-    public List<Skill> AvailableSkills => unitStats.availableSkills;
-
-    public bool CanUseSkill(Skill skill)
-    {
-        return currentSP >= skill.spCost;
-
-    }
+    public int maxAP;
+    public int currentAP;
+    public HashSet<string> skillsUsedThisTurn = new HashSet<string>();
+    public List<Skill> knownSkills = new List<Skill>();
    
-    public void UseSP(int amount)
-    {
-        currentSP = Mathf.Max(0, currentSP - amount);
 
-    }
-
-    public void RestoreSP(int amount)
-    {
-        currentSP = Mathf.Min(maxSP, currentSP + amount);
-    }
-
-  
-
-    public void ResetSP()
-    {
-        currentSP = maxSP;
-    }
+ 
+   
+    
    
     
    
@@ -138,6 +120,46 @@ public class Unit : MonoBehaviour
 
         }
 
+    }
+
+    public void StartTurn()
+    {
+        currentAP = maxAP;
+        skillsUsedThisTurn.Clear();
+
+    }
+
+    public bool SpendAp(int amount)
+    {
+        if(currentAP < amount)
+        {
+            return false;
+        }
+        currentAP -= amount;
+        return true;
+        
+            
+        
+    }
+
+    public void RecordSkillUsage(string skillName)
+    {
+        skillsUsedThisTurn.Add(skillName);
+    }
+
+    public List<Skill> GetAvailableSkills()
+    {
+        List<Skill> available = new List<Skill>();
+        foreach(Skill skill in knownSkills)
+        {
+         if(currentAP >= skill.apCost && 
+                (skill.prerequisites == null || skill.prerequisites.Count == 0||
+                skill.prerequisites.Any(prereq => skillsUsedThisTurn.Contains(prereq))))
+            {
+                available.Add(skill);
+            }
+        }
+        return available;
     }
 
     public virtual void InitializeUnit()

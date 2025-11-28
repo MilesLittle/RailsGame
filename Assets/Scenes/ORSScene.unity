@@ -307,7 +307,12 @@ MonoBehaviour:
   MAtk: 1
   MaxHp: 1
   Hp: 1
-  currentAP: 0
+  maxAP: 6
+  currentAP: 6
+  knownSkills:
+  - {fileID: 11400000, guid: b529cfd80929b2f4398af68d9b40c3c7, type: 2}
+  - {fileID: 11400000, guid: 59c48cdc16e549044ad0a5853e0dce4e, type: 2}
+  - {fileID: 11400000, guid: a56cc873adc5b234fa9c3166ed6d9401, type: 2}
 --- !u!4 &149026752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6162138971499751098, guid: d178c18d26a71a443a1f831fab8cb0a6, type: 3}
@@ -1859,6 +1864,7 @@ MonoBehaviour:
   lineMaterial: {fileID: 2100000, guid: 769dcfec71bd2724f858ffc0ee586b4b, type: 2}
   gridController: {fileID: 1371872114}
   gameController: {fileID: 1371872117}
+  tacticsController: {fileID: 1371872115}
   gridCamera: {fileID: 734217586}
   renderGrid: 1
 --- !u!1 &989444300 stripped
@@ -2380,6 +2386,9 @@ MonoBehaviour:
   tacticsCameraState: 0
   tacticsState: 0
   gameController: {fileID: 1371872117}
+  selectedSkill: {fileID: 0}
+  selectedDirection: 0
+  tileSelectionMode: 0
 --- !u!114 &1371872116
 MonoBehaviour:
   m_ObjectHideFlags: 0

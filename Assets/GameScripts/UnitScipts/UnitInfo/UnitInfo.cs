@@ -28,7 +28,7 @@ public class UnitInfo : ScriptableObject
 
     
 
-    public List<Skill> availableSkills;
+
     
 
 

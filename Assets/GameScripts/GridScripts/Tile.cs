@@ -16,6 +16,12 @@ public class Tile
         this.tileCoords = tileCoords;
         this.tilePosition = tilePosition;
     }
+    public void SetHighlighted(bool on)
+    {
+        
+        
+    }
+
 }
 
 public class PathNode

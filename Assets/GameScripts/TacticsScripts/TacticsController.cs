@@ -40,10 +40,13 @@ public class TacticsController : MonoBehaviour
     private int selectedAction = 0;
     private string[] actionOptions = { "Move", "Skill", "Item", "End Turn" };
     public Queue<Unit> turnQueue = new Queue<Unit>();
+    public Skill selectedSkill;
+    public DirectionFacing selectedDirection = DirectionFacing.North;
 
     public TileSelectionMode tileSelectionMode = TileSelectionMode.None;
-    private Skill skillBeingUsed;
 
+    public HashSet<Tile> highlightedTiles = new HashSet<Tile>();
+   
     private void Awake()
     {
        
@@ -68,6 +71,20 @@ public class TacticsController : MonoBehaviour
 
                 GUI.color = Color.white;
             }
+            if(tacticsState == TacticsState.PlayerSkillQueueing)
+            {
+                GUI.Label(new Rect(200, 10, 200, 20), $"Current Direction: {selectedDirection.ToString()}");
+                List<Skill> skills = gameController.currentUnit.GetAvailableSkills();
+                for(int i = 0; i < skills.Count; i++)
+                {
+                    if(GUI.Button(new Rect(10, 40 + i * 30, 150, 25), skills[i].skillName))
+                    {
+                        selectedSkill = skills[i];
+                        gameController.currentlySelectedTile = gameController.currentUnit.currentTile;
+                        tileSelectionMode = TileSelectionMode.SkillTargeting;
+                    }
+                }
+            }
 
             
             
@@ -75,9 +92,20 @@ public class TacticsController : MonoBehaviour
                 GUI.enabled = true;
             }
         }
-    
 
 
+    private void HighlightSkillArea()
+    {
+        // Clear previous highlights
+     
+        highlightedTiles.Clear();
+
+        if (selectedSkill != null && gameController.currentlySelectedTile != null)
+        {
+            highlightedTiles.AddRange(GetTilesInArea(gameController.currentlySelectedTile, selectedSkill.areaType, selectedSkill.areaSize, selectedDirection));
+          
+        }
+    }
     private void HandleActionSelect(string action)
     {
         switch(action)
@@ -90,13 +118,11 @@ public class TacticsController : MonoBehaviour
                 tacticsCameraState = TacticsCameraState.SelectedTile;
                 moveCamera();
                 break;
-
             case "Skill":
-              
                 tacticsState = TacticsState.PlayerSkillQueueing;
-                gameController.currentUnit.ResetSP();
                 break;
 
+           
             case "Item":
                 Debug.Log("No Item Menu Yet");
                     break;
@@ -292,11 +318,11 @@ public class TacticsController : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    
+
                     TacticsStateSwap();
                 }
             }
-          else if (tacticsState == TacticsState.PlayerChoosingTile)
+            else if (tacticsState == TacticsState.PlayerChoosingTile)
             {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
@@ -332,14 +358,86 @@ public class TacticsController : MonoBehaviour
 
                 }
             }
-            if(tacticsCameraState == TacticsCameraState.FollowingMovement)
+            else if (tacticsState == TacticsState.PlayerSkillQueueing && tileSelectionMode == TileSelectionMode.SkillTargeting)
+            {
+                HighlightSkillArea();
+                //Handle Skill targeting Tile selection
+                if(Input.GetKeyDown(KeyCode.W))
+                {
+                    changeSelectedTile((0, 1), gameController.currentlySelectedTile);
+                    moveCamera();
+                }
+                else if (Input.GetKeyDown(KeyCode.S))
+                {
+                    changeSelectedTile((0, -1), gameController.currentlySelectedTile);
+                    moveCamera();
+                }
+                else if (Input.GetKeyDown(KeyCode.A))
+                {
+                    changeSelectedTile((-1, 0), gameController.currentlySelectedTile);
+                    moveCamera();
+                }
+                else if (Input.GetKeyDown(KeyCode.D))
+                {
+                    changeSelectedTile((1, 0), gameController.currentlySelectedTile);
+                    moveCamera();
+                }
+
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    switch(selectedDirection)
+                    {
+                        case DirectionFacing.North:
+                            selectedDirection = DirectionFacing.East;
+                            break;
+                        case DirectionFacing.East:
+                            selectedDirection = DirectionFacing.South;
+                            break;
+                        case DirectionFacing.South:
+                            selectedDirection = DirectionFacing.West;
+                            break;
+                        case DirectionFacing.West:
+                            selectedDirection = DirectionFacing.North;
+                            break;
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    switch (selectedDirection)
+                    {
+                        case DirectionFacing.North:
+                            selectedDirection = DirectionFacing.West;
+                            break;
+                        case DirectionFacing.East:
+                            selectedDirection = DirectionFacing.North;
+                            break;
+                        case DirectionFacing.South:
+                            selectedDirection = DirectionFacing.East;
+                            break;
+                        case DirectionFacing.West:
+                            selectedDirection = DirectionFacing.South;
+                            break;
+                    }
+                }
+
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    bool success = TryUseSkill(gameController.currentUnit, selectedSkill, gameController.currentlySelectedTile, selectedDirection);
+                    if(success)
+                    {
+                        tacticsState = TacticsState.PlayerActionSelect;
+                        tileSelectionMode = TileSelectionMode.None;
+                        highlightedTiles.Clear();
+                    } 
+                }
+            }
+            if (tacticsCameraState == TacticsCameraState.FollowingMovement)
             {
                 gameController.playerCamera.transform.position = transform.InverseTransformPoint(gameController.currentUnit.transform.position + new Vector3(0, 15, -15));
             }
 
         }
     }
-
     public IEnumerator moveAlongPath(Unit unit, List<Tile> path, float moveSpeed =4f)
     {
         if (path == null || path.Count == 0) 
@@ -374,6 +472,11 @@ public class TacticsController : MonoBehaviour
         Debug.Log("Unit has finished moving along the path.");
         TacticsStateSwap();
     }
+    private void CancelTileSelection() {
+        Debug.Log("Tile selection canceled."); tileSelectionMode = TileSelectionMode.Movement;
+      
+
+        tacticsState = TacticsState.PlayerTurn; }
 
     private void TacticsStateSwap() //For now this will simply cycle through these two states, later on there will be a turn charge state, a turn swap state, enemy phase state, stuff like that.
     {
@@ -554,9 +657,220 @@ public class TacticsController : MonoBehaviour
         return targetTile;
     }
 
-    
-    
+    public bool TryUseSkill(Unit unit, Skill skill, Tile targetTile, DirectionFacing direction)
+    {
+        if (unit.currentAP < skill.apCost)
+        {
+            return false;
 
+        }
+
+        if(skill.prerequisites != null && skill.prerequisites.Count > 0)
+        {
+            bool hasPrereq = skill.prerequisites.Any(prereq => unit.skillsUsedThisTurn.Contains(prereq));
+            if(!hasPrereq)
+            {
+                return false;
+            }
+        }
+
+        List<Unit> affectedUnits = GetUnitsInArea(targetTile, skill.areaType, skill.areaSize, direction);
+
+        skill.ApplyEffect(unit, affectedUnits);
+
+        unit.currentAP -= skill.apCost;
+        unit.skillsUsedThisTurn.Add(skill.skillName);
+
+        return true;
+        
+            
+        
+    }
+
+    public List<Tile> GetTilesInArea(Tile targetTile, SkillAreaType areaType, int areaSize, DirectionFacing direction )
+    {
+        List<Tile> affectedTiles = new List<Tile>();
+
+        switch (areaType)
+        {
+            case SkillAreaType.SingleTile:
+                if (targetTile != null)
+                    affectedTiles.Add(targetTile);
+                break;
+            case SkillAreaType.Line:
+                affectedTiles.AddRange(GetTilesInLine(targetTile, areaSize, direction));
+                break;
+            case SkillAreaType.Circle:
+                affectedTiles.AddRange(GetTilesInCircle(targetTile, areaSize));
+                break;
+            case SkillAreaType.Cone:
+                affectedTiles.AddRange(GetTilesInCone(targetTile, areaSize, direction));
+                break;
+        }
+        return affectedTiles;
+    }
+
+    private List<Tile> GetTilesInLine(Tile startTile, int length, DirectionFacing direction)
+    {
+        List<Tile> tiles = new List<Tile>();
+        int dx = 0, dz = 0;
+        switch (direction)
+        {
+            case DirectionFacing.North: dz = 1; break;
+            case DirectionFacing.South: dz = -1; break;
+            case DirectionFacing.East: dx = 1; break;
+            case DirectionFacing.West: dx = -1; break;
+        }
+        for (int i = 0; i <= length; i++)
+        {
+            Tile tile = gameController.findExistingTile(
+                startTile.tileCoords.Item1 + i * dx,
+                startTile.tileCoords.Item3 + i * dz);
+            if (tile != null)
+                tiles.Add(tile);
+        }
+        return tiles;
+    }
+
+    private List<Tile> GetTilesInCircle(Tile centerTile, int radius)
+    {
+        List<Tile> tiles = new List<Tile>();
+        foreach (Tile tile in gameController.gridMap.Values)
+        {
+            int dx = Mathf.Abs(tile.tileCoords.Item1 - centerTile.tileCoords.Item1);
+            int dz = Mathf.Abs(tile.tileCoords.Item3 - centerTile.tileCoords.Item3);
+            if (dx + dz <= radius)
+                tiles.Add(tile);
+        }
+        return tiles;
+    }
+
+    private List<Tile> GetTilesInCone(Tile originTile, int length, DirectionFacing direction)
+    {
+      List<Tile> tiles = new List<Tile>();
+        int dx = 0, dz = 0;
+        switch (direction)
+        {
+            case DirectionFacing.North: dz = 1; break;
+            case DirectionFacing.South: dz = -1; break;
+            case DirectionFacing.East: dx = 1; break;
+            case DirectionFacing.West: dx = -1; break;
+        }
+        for (int i = 1; i <= length; i++)
+        {
+            for (int j = -i; j <= i; j++)
+            {
+                int x = originTile.tileCoords.Item1 + dx * i + (dz == 0 ? j : 0);
+                int z = originTile.tileCoords.Item3 + dz * i + (dx == 0 ? j : 0);
+                Tile tile = gameController.findExistingTile(x, z);
+                if (tile != null)
+                    tiles.Add(tile);
+            }
+        }
+        return tiles;
+    }
+
+    public List<Unit> GetUnitsInArea(Tile targetTile, SkillAreaType areaType, int areaSize, DirectionFacing direction)
+    {
+        List<Unit> affectedUnits = new List<Unit>();
+
+        switch(areaType)
+        {
+            case SkillAreaType.SingleTile:
+                if(targetTile.unitOnTile != null)
+                {
+                    affectedUnits.Add(targetTile.unitOnTile);
+                }
+                break;
+            case SkillAreaType.Line:
+                affectedUnits.AddRange(GetUnitsInLine(targetTile, areaSize, direction));
+                break;
+            case SkillAreaType.Circle:
+                affectedUnits.AddRange(GetUnitsInCircle(targetTile, areaSize));
+                break;
+            case SkillAreaType.Cone:
+                affectedUnits.AddRange(GetUnitsInCone(targetTile, areaSize, direction));
+                break;
+        }
+        return affectedUnits;
+    }
     
-    
+    private List<Unit> GetUnitsInLine(Tile startTile, int length, DirectionFacing direction)
+    {
+        List<Unit> units = new List<Unit>();
+        int dx = 0;
+        int dz = 0;
+        switch (direction)
+        {
+            case DirectionFacing.North:
+                dz = 1; break;
+            case DirectionFacing.South:
+                dz = -1; break;
+            case DirectionFacing.East:
+                dx = 1; break;
+            case DirectionFacing.West:
+                dx = -1; break;
+        }
+        for (int i = 0; i <= length; i++)
+        {
+            Tile tile = gameController.findExistingTile(
+                startTile.tileCoords.Item1 + i * dx,
+                startTile.tileCoords.Item3 + i * dz);
+            if(tile != null && tile.unitOnTile != null)
+            {
+                units.Add(tile.unitOnTile);
+            }
+        }
+        return units;
+    }
+
+    private List<Unit> GetUnitsInCircle(Tile centerTile, int radius)
+    {
+        List<Unit> units = new List<Unit>();
+        foreach(Tile tile in gameController.gridMap.Values)
+        {
+            if(Vector3.Distance(tile.tilePosition, centerTile.tilePosition) <= radius)
+            {
+                if(tile.unitOnTile != null)
+                {
+                    units.Add(tile.unitOnTile);
+                }
+            }
+        }
+        return units;
+    }
+
+    private List<Unit> GetUnitsInCone(Tile originTile, int length, DirectionFacing direction)
+    {
+        List<Unit> units = new List<Unit>();
+        int dx = 0;
+        int dz = 0;
+
+        switch (direction)
+        {
+            case DirectionFacing.North:
+                dz = 1; break;
+            case DirectionFacing.South:
+                dz = -1; break;
+            case DirectionFacing.East:
+                dx = 1;
+                break;
+            case DirectionFacing.West:
+                dx = -1; break;
+        }
+        for(int i = 1; i <= length; i++)
+        {
+            for(int j = -i; j <= i; j++)
+            {
+                int x = originTile.tileCoords.Item1 + dx * i + (dz == 0 ? j : 0);
+                int z = originTile.tileCoords.Item3 + dz * i + (dz == 0 ? j : 0);
+                Tile tile = gameController.findExistingTile(x, z);
+                if(tile != null && tile.unitOnTile != null)
+                {
+                    units.Add(tile.unitOnTile);
+                }
+            }
+        }
+        return units;
+    }
 }

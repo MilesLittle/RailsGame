@@ -63,6 +63,12 @@ public class GridController : MonoBehaviour
         }
     }
 
+    public Tile GetTileAt(Vector2Int coords)
+    {
+        gridMap.TryGetValue((coords.x, coords.y), out Tile tile);
+        return tile;
+    }
+
     public bool CanTraverse(Unit unit, Tile fromTile, Tile toTile)
     {
         if(toTile.unitOnTile != null && toTile.unitOnTile != unit)

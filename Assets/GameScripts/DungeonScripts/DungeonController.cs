@@ -86,57 +86,57 @@ public class DungeonController : MonoBehaviour
         }
         switch (unit.directionFacing)
         {
-            case Unit.DirectionFacing.North:
+            case DirectionFacing.North:
                 if (direction == 90)
                 {
-                    unit.directionFacing = Unit.DirectionFacing.East;
+                    unit.directionFacing = DirectionFacing.East;
                     unit.transform.rotation = unit.transform.rotation * Quaternion.Euler(0, 90, 0);
                     
                 }
                 else if (direction == -90)
                 {
-                    unit.directionFacing = Unit.DirectionFacing.West;
+                    unit.directionFacing = DirectionFacing.West;
                     unit.transform.rotation = unit.transform.rotation * Quaternion.Euler(0, -90, 0);
                     
                 }
                 break;
-            case Unit.DirectionFacing.East:
+            case DirectionFacing.East:
                 if (direction == 90)
                 {
-                    unit.directionFacing = Unit.DirectionFacing.South;
+                    unit.directionFacing = DirectionFacing.South;
                     unit.transform.rotation = unit.transform.rotation * Quaternion.Euler(0, 90, 0);
                     
                 }
                 else if (direction == -90)
                 {
-                    unit.directionFacing = Unit.DirectionFacing.North;
+                    unit.directionFacing = DirectionFacing.North;
                     unit.transform.rotation = unit.transform.rotation * Quaternion.Euler(0, -90, 0);
                    
 
                 }
                 break;
-            case Unit.DirectionFacing.South:
+            case DirectionFacing.South:
                 if (direction == 90)
                 {
-                    unit.directionFacing = Unit.DirectionFacing.West;
+                    unit.directionFacing = DirectionFacing.West;
                     unit.transform.rotation = unit.transform.rotation * Quaternion.Euler(0, 90, 0);
                     
                 }
                 else if (direction == -90)
                 {
-                    unit.directionFacing = Unit.DirectionFacing.East;
+                    unit.directionFacing = DirectionFacing.East;
                     unit.transform.rotation = unit.transform.rotation * Quaternion.Euler(0, -90, 0);
                 }
                 break;
-            case Unit.DirectionFacing.West:
+            case DirectionFacing.West:
                 if (direction == 90)
                 {
-                    unit.directionFacing = Unit.DirectionFacing.North;
+                    unit.directionFacing = DirectionFacing.North;
                     unit.transform.rotation = unit.transform.rotation * Quaternion.Euler(0, 90, 0);
                 }
                 else if (direction == -90)
                 {
-                    unit.directionFacing = Unit.DirectionFacing.South;
+                    unit.directionFacing = DirectionFacing.South;
                     unit.transform.rotation = unit.transform.rotation * Quaternion.Euler(0, -90, 0);
                 }
                 break;
@@ -169,7 +169,7 @@ public class DungeonController : MonoBehaviour
         (int, int) newCoords = (unit.currentTile.tileCoords.Item1, unit.currentTile.tileCoords.Item3);
         switch (unit.directionFacing)
         {
-            case Unit.DirectionFacing.North:
+            case DirectionFacing.North:
                 if (direction == 0)
                 {
                     newCoords.Item2 = (unit.currentTile.tileCoords.Item3 + 1);
@@ -194,7 +194,7 @@ public class DungeonController : MonoBehaviour
                 {
                     return newCoords;
                 }
-            case Unit.DirectionFacing.East:
+            case DirectionFacing.East:
                 if (direction == 0)
                 {
                     newCoords.Item1 = (unit.currentTile.tileCoords.Item1 + 1);
@@ -219,7 +219,7 @@ public class DungeonController : MonoBehaviour
                 {
                     return newCoords;
                 }
-            case Unit.DirectionFacing.South:
+            case DirectionFacing.South:
                 if (direction == 0)
                 {
                     newCoords.Item2 = (unit.currentTile.tileCoords.Item3 - 1);
@@ -244,7 +244,7 @@ public class DungeonController : MonoBehaviour
                 {
                     return newCoords;
                 }
-            case Unit.DirectionFacing.West:
+            case DirectionFacing.West:
                 if (direction == 0)
                 {
                     newCoords.Item1 = (unit.currentTile.tileCoords.Item1 - 1);

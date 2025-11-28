@@ -9,6 +9,7 @@ public class GridVisualizor : MonoBehaviour
     public Material lineMaterial;
     public GridController gridController;
     public GameController gameController;
+    public TacticsController tacticsController;
     public Camera gridCamera;
     public bool renderGrid = true;
     public void ToggleGridLines()
@@ -45,11 +46,16 @@ public class GridVisualizor : MonoBehaviour
             {
                 GL.Color(new Color(0f, 1f, 1f, kvp.Value.moveCost/3f));
             }
+            if(tacticsController.highlightedTiles.Contains(kvp.Value))
+            {
+                GL.Color(new Color(1f, 1f, 0f, .3f));
+            }
 
             if(gameController.currentlySelectedTile != null && gameController.currentlySelectedTile == kvp.Value)
             {
                 GL.Color(new Color(1f, 0f, 1f, .3f));
             }
+
 
             Vector3 center = kvp.Value.tilePosition;
             float half = gridController.tileSize * 0.5f;

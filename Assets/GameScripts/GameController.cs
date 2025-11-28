@@ -143,7 +143,7 @@ public class GameController : MonoBehaviour
     {
         gameState = GamePlayState.Dungeon;
         currentUnit.currentTile = gridMap[(0, 0)];
-        currentUnit.directionFacing = Unit.DirectionFacing.North;
+        currentUnit.directionFacing = DirectionFacing.North;
         gridController.enabled = true;
         dungeonController.enabled = true;
         dungeonController.initializeDungeon();
@@ -170,7 +170,7 @@ public class GameController : MonoBehaviour
             unit.currentTile = gridMap[(i,i)];
             i++;
             PlaceUnit(currentUnit, currentUnit.currentTile);
-            currentUnit.directionFacing = Unit.DirectionFacing.North;
+            currentUnit.directionFacing = DirectionFacing.North;
         }
            
             

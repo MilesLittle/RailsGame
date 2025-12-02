@@ -19,4 +19,5 @@ MonoBehaviour:
   - Slash
   areaType: 3
   areaSize: 5
+  targetRange: 5
   description: 

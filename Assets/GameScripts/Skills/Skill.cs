@@ -21,6 +21,7 @@ public class Skill : ScriptableObject
     public List<string> prerequisites;
     public SkillAreaType areaType;
     public int areaSize;
+    public int targetRange = 1;
     [TextArea]
     public string description;
 

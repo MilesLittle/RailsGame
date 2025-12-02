@@ -18,4 +18,5 @@ MonoBehaviour:
   prerequisites: []
   areaType: 1
   areaSize: 5
+  targetRange: 5
   description: 

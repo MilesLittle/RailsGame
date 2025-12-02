@@ -66,6 +66,7 @@
     <Compile Include="Assets\DialogueSystem\DialogueScripts\DialogueManager.cs" />
     <Compile Include="Assets\DialogueSystem\DialogueCamera\PortraitCamera.cs" />
     <Compile Include="Assets\DialogueSystem\DialogueScripts\CameraMovement.cs" />
+    <Compile Include="Assets\GameScripts\UnitScipts\EnemyAI.cs" />
     <Compile Include="Assets\GameScripts\UnitScipts\SeaMouse.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
     <Compile Include="Assets\GameScripts\GridScripts\GridVisualizor.cs" />

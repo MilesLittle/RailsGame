@@ -386,6 +386,7 @@
 "Assets/GameScripts/GridScripts/Tile.cs"
 "Assets/GameScripts/Skills/Skill.cs"
 "Assets/GameScripts/TacticsScripts/TacticsController.cs"
+"Assets/GameScripts/UnitScipts/EnemyAI.cs"
 "Assets/GameScripts/UnitScipts/SeaMouse.cs"
 "Assets/GameScripts/UnitScipts/Unit.cs"
 "Assets/GameScripts/UnitScipts/UnitInfo/Beastiary.cs"
